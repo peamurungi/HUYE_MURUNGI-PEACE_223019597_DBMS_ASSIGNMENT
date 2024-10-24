@@ -1,0 +1,346 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 94
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE RUHANDE3;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> USE RUHANDE3;
+Database changed
+mysql> CREATE TABLE NGOMA(ID CHAR(10),F_NAME CHAR(10),L_NAME CHAR(10),PROVINCE CHAR(10),DISTRICT CHAR(10),SECTOR CHAR(10),CELL CHAR(10),GENDER CHAR(10));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO NGOMA VALUES('12345','MWIZA','SHENNAH','SOUTHERN','NYANZA','KANYANZA','NYERI','FEMALE');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT *FROM NGOMA;
++-------+--------+---------+----------+----------+----------+-------+--------+
+| ID    | F_NAME | L_NAME  | PROVINCE | DISTRICT | SECTOR   | CELL  | GENDER |
++-------+--------+---------+----------+----------+----------+-------+--------+
+| 12345 | MWIZA  | SHENNAH | SOUTHERN | NYANZA   | KANYANZA | NYERI | FEMALE |
++-------+--------+---------+----------+----------+----------+-------+--------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('12345','MURUNGI','SHEILAH','SOUTHERN','NYANZA','KANYANZA','NYERI','FEMALE');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('12345','KEZA','SHENIA','EASTERN','NYAGATARE','MATIMBA','KANYONZA','FEMALE');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO NGOMA VALUES('12346','KAYITESI','ALICE','EASTERN','NYAGATARE','MATIMBA','KANYONZA','FEMALE');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('12347','KAYITESI','ALINE','EASTERN','NYAGATARE','MATIMBA','KANYONZA','FEMALE');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('12348','KAYESU','INES','EASTERN','NYAGATARE','MATIMBA','KANYONZA','FEMALE');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('12349','CYIZA','LIAM','EASTERN','NYAGATARE','MATIMBA','KANYONZA','MALE');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('123410','KAMUGISHA','NATHAN','EASTERN','NYAGATARE','BUGARAGARA','RWIMIYAGA','MALE');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('123411','MUGISHA','NICHOLAS','EASTERN','NYAGATARE','BUGARAGARA','RWIMIYAGA','MALE');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('123412','SHEMA','GILBERT','KIGALICITY','KICUKIRO','GASOGI','INDERA','MALE');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT *FROM NGOMA;
++--------+-----------+----------+------------+-----------+------------+-----------+--------+
+| ID     | F_NAME    | L_NAME   | PROVINCE   | DISTRICT  | SECTOR     | CELL      | GENDER |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+
+| 12345  | MWIZA     | SHENNAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE |
+| 12345  | MURUNGI   | SHEILAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE |
+| 12345  | KEZA      | SHENIA   | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE |
+| 12346  | KAYITESI  | ALICE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE |
+| 12347  | KAYITESI  | ALINE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE |
+| 12348  | KAYESU    | INES     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE |
+| 12349  | CYIZA     | LIAM     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | MALE   |
+| 123410 | KAMUGISHA | NATHAN   | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   |
+| 123411 | MUGISHA   | NICHOLAS | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   |
+| 123412 | SHEMA     | GILBERT  | KIGALICITY | KICUKIRO  | GASOGI     | INDERA    | MALE   |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD COLUMN TELEPHONE INT(10);
+Query OK, 10 rows affected, 1 warning (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 1
+
+mysql> SELECT *FROM NGOMA;
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| ID     | F_NAME    | L_NAME   | PROVINCE   | DISTRICT  | SECTOR     | CELL      | GENDER | TELEPHONE |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| 12345  | MWIZA     | SHENNAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE |      NULL |
+| 12345  | MURUNGI   | SHEILAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE |      NULL |
+| 12345  | KEZA      | SHENIA   | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE |      NULL |
+| 12346  | KAYITESI  | ALICE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE |      NULL |
+| 12347  | KAYITESI  | ALINE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE |      NULL |
+| 12348  | KAYESU    | INES     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE |      NULL |
+| 12349  | CYIZA     | LIAM     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | MALE   |      NULL |
+| 123410 | KAMUGISHA | NATHAN   | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   |      NULL |
+| 123411 | MUGISHA   | NICHOLAS | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   |      NULL |
+| 123412 | SHEMA     | GILBERT  | KIGALICITY | KICUKIRO  | GASOGI     | INDERA    | MALE   |      NULL |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET TELEPHONE=0788736208;
+Query OK, 10 rows affected (0.00 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| ID     | F_NAME    | L_NAME   | PROVINCE   | DISTRICT  | SECTOR     | CELL      | GENDER | TELEPHONE |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| 12345  | MWIZA     | SHENNAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 788736208 |
+| 12345  | MURUNGI   | SHEILAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 788736208 |
+| 12345  | KEZA      | SHENIA   | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 |
+| 12346  | KAYITESI  | ALICE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 |
+| 12347  | KAYITESI  | ALINE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 |
+| 12348  | KAYESU    | INES     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 |
+| 12349  | CYIZA     | LIAM     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | MALE   | 788736208 |
+| 123410 | KAMUGISHA | NATHAN   | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736208 |
+| 123411 | MUGISHA   | NICHOLAS | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736208 |
+| 123412 | SHEMA     | GILBERT  | KIGALICITY | KICUKIRO  | GASOGI     | INDERA    | MALE   | 788736208 |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET TELEPHONE WHERE ID 12346=0788736208;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE ID 12346=0788736208' at line 1
+mysql> UPDATE NGOMA SET TELEPHONE=0788736209 WHERE ID=12346;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET TELEPHONE=0788736207 WHERE ID=12347;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET TELEPHONE=0788736202 WHERE ID=12348;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET TELEPHONE=0788736201 WHERE ID=12349;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET TELEPHONE=0788736205 WHERE ID=123410;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET TELEPHONE=0788736222 WHERE ID=123411;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET TELEPHONE=0788736223 WHERE ID=123412;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| ID     | F_NAME    | L_NAME   | PROVINCE   | DISTRICT  | SECTOR     | CELL      | GENDER | TELEPHONE |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| 12345  | MWIZA     | SHENNAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 788736208 |
+| 12345  | MURUNGI   | SHEILAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 788736208 |
+| 12345  | KEZA      | SHENIA   | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 |
+| 12346  | KAYITESI  | ALICE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736209 |
+| 12347  | KAYITESI  | ALINE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736207 |
+| 12348  | KAYESU    | INES     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736202 |
+| 12349  | CYIZA     | LIAM     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | MALE   | 788736201 |
+| 123410 | KAMUGISHA | NATHAN   | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736205 |
+| 123411 | MUGISHA   | NICHOLAS | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736222 |
+| 123412 | SHEMA     | GILBERT  | KIGALICITY | KICUKIRO  | GASOGI     | INDERA    | MALE   | 788736223 |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET ID=12341 WHERE  F_NAME=MWIZA;
+ERROR 1054 (42S22): Unknown column 'MWIZA' in 'where clause'
+mysql> UPDATE NGOMA SET ID=12341 WHERE F_NAME="MWIZA";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET ID=12342 WHERE F_NAME="MURUNGI";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET TELEPHONE=0786091306 WHERE F_NAME="MWIZA";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET TELEPHONE=0786091366 WHERE F_NAME="MURUNGI";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| ID     | F_NAME    | L_NAME   | PROVINCE   | DISTRICT  | SECTOR     | CELL      | GENDER | TELEPHONE |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| 12341  | MWIZA     | SHENNAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091306 |
+| 12342  | MURUNGI   | SHEILAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091366 |
+| 12345  | KEZA      | SHENIA   | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 |
+| 12346  | KAYITESI  | ALICE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736209 |
+| 12347  | KAYITESI  | ALINE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736207 |
+| 12348  | KAYESU    | INES     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736202 |
+| 12349  | CYIZA     | LIAM     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | MALE   | 788736201 |
+| 123410 | KAMUGISHA | NATHAN   | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736205 |
+| 123411 | MUGISHA   | NICHOLAS | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736222 |
+| 123412 | SHEMA     | GILBERT  | KIGALICITY | KICUKIRO  | GASOGI     | INDERA    | MALE   | 788736223 |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD COLUMN STATUS CHAR(11);
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+--------+
+| ID     | F_NAME    | L_NAME   | PROVINCE   | DISTRICT  | SECTOR     | CELL      | GENDER | TELEPHONE | STATUS |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+--------+
+| 12341  | MWIZA     | SHENNAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091306 | NULL   |
+| 12342  | MURUNGI   | SHEILAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091366 | NULL   |
+| 12345  | KEZA      | SHENIA   | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 | NULL   |
+| 12346  | KAYITESI  | ALICE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736209 | NULL   |
+| 12347  | KAYITESI  | ALINE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736207 | NULL   |
+| 12348  | KAYESU    | INES     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736202 | NULL   |
+| 12349  | CYIZA     | LIAM     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | MALE   | 788736201 | NULL   |
+| 123410 | KAMUGISHA | NATHAN   | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736205 | NULL   |
+| 123411 | MUGISHA   | NICHOLAS | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736222 | NULL   |
+| 123412 | SHEMA     | GILBERT  | KIGALICITY | KICUKIRO  | GASOGI     | INDERA    | MALE   | 788736223 | NULL   |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+--------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA DROP COLUMN STATUS;
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| ID     | F_NAME    | L_NAME   | PROVINCE   | DISTRICT  | SECTOR     | CELL      | GENDER | TELEPHONE |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| 12341  | MWIZA     | SHENNAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091306 |
+| 12342  | MURUNGI   | SHEILAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091366 |
+| 12345  | KEZA      | SHENIA   | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 |
+| 12346  | KAYITESI  | ALICE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736209 |
+| 12347  | KAYITESI  | ALINE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736207 |
+| 12348  | KAYESU    | INES     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736202 |
+| 12349  | CYIZA     | LIAM     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | MALE   | 788736201 |
+| 123410 | KAMUGISHA | NATHAN   | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736205 |
+| 123411 | MUGISHA   | NICHOLAS | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736222 |
+| 123412 | SHEMA     | GILBERT  | KIGALICITY | KICUKIRO  | GASOGI     | INDERA    | MALE   | 788736223 |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM NGOMA WHERE PROVINCE="EASTERN" OR F_NAME="MWIZA";
++--------+-----------+----------+----------+-----------+------------+-----------+--------+-----------+
+| ID     | F_NAME    | L_NAME   | PROVINCE | DISTRICT  | SECTOR     | CELL      | GENDER | TELEPHONE |
++--------+-----------+----------+----------+-----------+------------+-----------+--------+-----------+
+| 12341  | MWIZA     | SHENNAH  | SOUTHERN | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091306 |
+| 12345  | KEZA      | SHENIA   | EASTERN  | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 |
+| 12346  | KAYITESI  | ALICE    | EASTERN  | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736209 |
+| 12347  | KAYITESI  | ALINE    | EASTERN  | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736207 |
+| 12348  | KAYESU    | INES     | EASTERN  | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736202 |
+| 12349  | CYIZA     | LIAM     | EASTERN  | NYAGATARE | MATIMBA    | KANYONZA  | MALE   | 788736201 |
+| 123410 | KAMUGISHA | NATHAN   | EASTERN  | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736205 |
+| 123411 | MUGISHA   | NICHOLAS | EASTERN  | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736222 |
++--------+-----------+----------+----------+-----------+------------+-----------+--------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT *FROM NGOMA WHERE DISTRICT="NYAGATARE" AND ID="12349";
++-------+--------+--------+----------+-----------+---------+----------+--------+-----------+
+| ID    | F_NAME | L_NAME | PROVINCE | DISTRICT  | SECTOR  | CELL     | GENDER | TELEPHONE |
++-------+--------+--------+----------+-----------+---------+----------+--------+-----------+
+| 12349 | CYIZA  | LIAM   | EASTERN  | NYAGATARE | MATIMBA | KANYONZA | MALE   | 788736201 |
++-------+--------+--------+----------+-----------+---------+----------+--------+-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT *FROM NGOMA;
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| ID     | F_NAME    | L_NAME   | PROVINCE   | DISTRICT  | SECTOR     | CELL      | GENDER | TELEPHONE |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| 12341  | MWIZA     | SHENNAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091306 |
+| 12342  | MURUNGI   | SHEILAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091366 |
+| 12345  | KEZA      | SHENIA   | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 |
+| 12346  | KAYITESI  | ALICE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736209 |
+| 12347  | KAYITESI  | ALINE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736207 |
+| 12348  | KAYESU    | INES     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736202 |
+| 12349  | CYIZA     | LIAM     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | MALE   | 788736201 |
+| 123410 | KAMUGISHA | NATHAN   | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736205 |
+| 123411 | MUGISHA   | NICHOLAS | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736222 |
+| 123412 | SHEMA     | GILBERT  | KIGALICITY | KICUKIRO  | GASOGI     | INDERA    | MALE   | 788736223 |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT ID,F_NAME,L_NAME FROM NGOMA;
++--------+-----------+----------+
+| ID     | F_NAME    | L_NAME   |
++--------+-----------+----------+
+| 12341  | MWIZA     | SHENNAH  |
+| 12342  | MURUNGI   | SHEILAH  |
+| 12345  | KEZA      | SHENIA   |
+| 12346  | KAYITESI  | ALICE    |
+| 12347  | KAYITESI  | ALINE    |
+| 12348  | KAYESU    | INES     |
+| 12349  | CYIZA     | LIAM     |
+| 123410 | KAMUGISHA | NATHAN   |
+| 123411 | MUGISHA   | NICHOLAS |
+| 123412 | SHEMA     | GILBERT  |
++--------+-----------+----------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD COLUMN EMAIL;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> ALTER TABLE NGOMA ADD COLUMN EMAIL CHAR(15);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+-------+
+| ID     | F_NAME    | L_NAME   | PROVINCE   | DISTRICT  | SECTOR     | CELL      | GENDER | TELEPHONE | EMAIL |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+-------+
+| 12341  | MWIZA     | SHENNAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091306 | NULL  |
+| 12342  | MURUNGI   | SHEILAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091366 | NULL  |
+| 12345  | KEZA      | SHENIA   | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 | NULL  |
+| 12346  | KAYITESI  | ALICE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736209 | NULL  |
+| 12347  | KAYITESI  | ALINE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736207 | NULL  |
+| 12348  | KAYESU    | INES     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736202 | NULL  |
+| 12349  | CYIZA     | LIAM     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | MALE   | 788736201 | NULL  |
+| 123410 | KAMUGISHA | NATHAN   | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736205 | NULL  |
+| 123411 | MUGISHA   | NICHOLAS | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736222 | NULL  |
+| 123412 | SHEMA     | GILBERT  | KIGALICITY | KICUKIRO  | GASOGI     | INDERA    | MALE   | 788736223 | NULL  |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+-------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA DROP COLLUMN EMAIL;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'EMAIL' at line 1
+mysql> ALTER TABLE NGOMA DROP COLUMN EMAIL;
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| ID     | F_NAME    | L_NAME   | PROVINCE   | DISTRICT  | SECTOR     | CELL      | GENDER | TELEPHONE |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+| 12341  | MWIZA     | SHENNAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091306 |
+| 12342  | MURUNGI   | SHEILAH  | SOUTHERN   | NYANZA    | KANYANZA   | NYERI     | FEMALE | 786091366 |
+| 12345  | KEZA      | SHENIA   | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736208 |
+| 12346  | KAYITESI  | ALICE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736209 |
+| 12347  | KAYITESI  | ALINE    | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736207 |
+| 12348  | KAYESU    | INES     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | FEMALE | 788736202 |
+| 12349  | CYIZA     | LIAM     | EASTERN    | NYAGATARE | MATIMBA    | KANYONZA  | MALE   | 788736201 |
+| 123410 | KAMUGISHA | NATHAN   | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736205 |
+| 123411 | MUGISHA   | NICHOLAS | EASTERN    | NYAGATARE | BUGARAGARA | RWIMIYAGA | MALE   | 788736222 |
+| 123412 | SHEMA     | GILBERT  | KIGALICITY | KICUKIRO  | GASOGI     | INDERA    | MALE   | 788736223 |
++--------+-----------+----------+------------+-----------+------------+-----------+--------+-----------+
+10 rows in set (0.00 sec)
+
+mysql>
